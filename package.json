@@ -1,7 +1,7 @@
 {
   "name": "texturant",
-  "version": "0.0.5",
-  "description": "A command line interface to simulate ordering food on a computer i guess",
+  "version": "0.0.7",
+  "description": "A command line interface to simulate ordering food on a computer I guess",
   "main": "bin/food.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

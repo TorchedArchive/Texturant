@@ -7,8 +7,8 @@ That is the command to install Texturant, a CLI made to simulate ordering food o
 ![Usage](https://samuraistacks-leader-of-the.succ.world/i/nxrl6a52.gif)
 
 # Changelog
-+ This README (Its improved on Github, added on NPM)
-+ Changed "test2" to "Burgers"
++ Improved todo list
++ Selecting "Burgers" on MacDonalds doesn't return literally nothing
 
 # Todo
 + All the other restaurant chains

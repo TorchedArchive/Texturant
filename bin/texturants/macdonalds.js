@@ -60,6 +60,9 @@ const clear = require("clear")
                     }, 6000);
                 })
                 break;
+            case "Burgers":
+                console.log("We do not have any burgers at the moment! Sorry for any inconvenience!\nTexturant CEO and Founder\n~ SamuraiStacks")
+                break;
             default:
                 break;
         }
