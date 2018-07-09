@@ -7,7 +7,7 @@ const clear = require("clear")
         message: "Welcome to MacDonalds! Select what category of food you want please!",
         choices: [
             "Breakfast",
-            "test2"
+            "Burgers"
         ]
     });
     MacDonalds.ask(function(ans) {
