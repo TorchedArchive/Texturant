@@ -11,9 +11,9 @@ That is the command to install Texturant, a CLI made to simulate ordering food o
 + Changed "test2" to "Burgers"
 
 # Todo
-All the other restaurant chains
- More food on MacDonalds
- Money
++ All the other restaurant chains
++ More food on MacDonalds
++ Money
 
 
 **I made this because I, SamuraiStacks had nothing to do and wanted to code something, so thanks to my lust of coding this now exists. :D xD**
