@@ -9,6 +9,7 @@ That is the command to install Texturant, a CLI made to simulate ordering food o
 # Changelog
 + Basic Money shell (Useable later): Test by doing `texturant money` report bugs at https://github.com/SamuraiStacks/Texturant/issues
 + Menu Updates: Texturant in ASCII art, Show current version
++ 3 items on the MacDonalds menu
 
 # Todo
 + All the other restaurant chains
