@@ -23,7 +23,10 @@ const clear = require("clear")
                         "Egg White Delight McMuffin",
                         "Sausage McMuffin", 
                         "Sausage McMufin With Egg",
-                        "Bacon, Egg and Cheese Biscuit"
+                        "Bacon, Egg and Cheese Biscuit",
+                        "Sausage Biscuit",
+                        "Sausage Biscuit with Egg",
+                        "Steak, Egg and Cheese Biscuit"
                     ]
                 })
                 MCDBreakfast.ask(function(ans) {
