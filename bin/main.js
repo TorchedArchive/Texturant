@@ -2,6 +2,7 @@
 const list = require("prompt-list")
 const args = process.argv.slice(2)
 const utils = require("./utils/mainUtils.js")
+const updater = require("./utils/updater.js")
 const packagejson = require("../package.json")
 const orderFrom = new list({
     name: "orderFrom",
@@ -30,7 +31,7 @@ console.log("  _____         _                         _   \n" +
 "|_   _|____  _| |_ _   _ _ __ __ _ _ __ | |_ \n" +
 "  | |/ _ \\ \\/ / __| | | | '__/ _` | '_ \\| __|\n" +
 "  | |  __/>  <| |_| |_| | | | (_| | | | | |_ \n" +
-"  |_|\\___/_/\\_\\\\__|\\__,_|_|  \__,_|_| |_|\\__| " + `Version: v${packagejson.version}`)
+"  |_|\\___/_/\\_\\\\__|\\__,_|_|  \__,_|_| |_|\\__| " + `Version: v${updater.versionCheck()}`)
 console.log("-".repeat(64))
 orderFrom.ask(function(choice) {
     try {
