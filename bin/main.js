@@ -2,7 +2,6 @@
 const list = require("prompt-list")
 const args = process.argv.slice(2)
 const utils = require("./utils/mainUtils.js")
-const updater = require("./utils/updater.js")
 const packagejson = require("../package.json")
 const orderFrom = new list({
     name: "orderFrom",
@@ -12,6 +11,14 @@ const orderFrom = new list({
         {name: "Burger King", disabled: "Not done yet"},
         {name: "Wendy's", disabled: "Not done yet"},
         {name: "Chick-fill-A", disabled: "Not done yet"}
+    ]
+})
+const mainMenu = new list({
+    name: "Main Menu",
+    choices: [
+        "Start",
+        "My Coins",
+        "Updates"
     ]
 })
 
@@ -31,14 +38,17 @@ console.log("  _____         _                         _   \n" +
 "|_   _|____  _| |_ _   _ _ __ __ _ _ __ | |_ \n" +
 "  | |/ _ \\ \\/ / __| | | | '__/ _` | '_ \\| __|\n" +
 "  | |  __/>  <| |_| |_| | | | (_| | | | | |_ \n" +
-"  |_|\\___/_/\\_\\\\__|\\__,_|_|  \__,_|_| |_|\\__| " + `Version: v${updater.versionCheck()}`)
+"  |_|\\___/_/\\_\\\\__|\\__,_|_|  \__,_|_| |_|\\__| " + `Version: v${packagejson.version}`)
 console.log("-".repeat(64))
-orderFrom.ask(function(choice) {
+mainMenu.ask((choice) => {
+    console.log(choice)
+})
+/* orderFrom.ask(function(choice) {
     try {
         let theTexturant = require(`./texturants/${choice.toLowerCase()}.js`)
         theTexturant.run(list)
     } catch (err) {
         console.log(err)
     }
-})
+}) */
 }
