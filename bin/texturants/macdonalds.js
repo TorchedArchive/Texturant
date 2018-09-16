@@ -33,34 +33,32 @@ const clear = require("clear")
                     console.log(`Susan > I will get you your ${ans.length > 1 ? `${ans.slice(0, ans.length - 1).join(", ")} and ${ans.slice(-1).pop()}` : ans.join(", ")}. Pull-up to the next window`)
                     setTimeout(() => {
                         console.log("Susan > Here is your order!")
+                            let speech = new list({
+                                name: "speech",
+                                message: "(What should I say?)",
+                                choices: [
+                                    "Thanks! Have a nice day!",
+                                    "Yeah whatever..",
+                                    "Okay bye."
+                                ]
+                            })
+                            speech.ask(function(ans) {
+                                console.log(`You > ${ans}`)
+                                switch (ans) {
+                                    case "Thanks! Have a nice day!":
+                                        console.log("Susan > You too! Come again!")
+                                        break;
+                                    case "Yeah whatever..":
+                                        console.log("Susan > Bye.")
+                                        break;
+                                    case "Okay bye.":
+                                        console.log("Susan > Later...")
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            })
                     }, 5000);
-                    setTimeout(() => {
-                        let speech = new list({
-                            name: "speech",
-                            message: "(What should I say?)",
-                            choices: [
-                                "Thanks! Have a nice day!",
-                                "Yeah whatever..",
-                                "Okay bye."
-                            ]
-                        })
-                        speech.ask(function(ans) {
-                            console.log(`You > ${ans}`)
-                            switch (ans) {
-                                case "Thanks! Have a nice day!":
-                                    console.log("Susan > You too! Come again!")
-                                    break;
-                                case "Yeah whatever..":
-                                    console.log("Susan > So uh bye")
-                                    break;
-                                case "Okay bye.":
-                                    console.log("Susan > Later...")
-                                    break;
-                                default:
-                                    break;
-                            }
-                        })
-                    }, 6000);
                 })
                 break;
             case "Burgers":
