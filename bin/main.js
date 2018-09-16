@@ -3,6 +3,7 @@ const list = require("prompt-list")
 const args = process.argv.slice(2)
 const utils = require("./utils/mainUtils.js")
 const packagejson = require("../package.json")
+const clear = require("clear")
 const orderFrom = new list({
     name: "orderFrom",
     message: "Where would I like to go today?",
@@ -34,21 +35,26 @@ if (args[0]) {
             break;
     }
 } else {
-console.log("  _____         _                         _   \n" + 
-"|_   _|____  _| |_ _   _ _ __ __ _ _ __ | |_ \n" +
-"  | |/ _ \\ \\/ / __| | | | '__/ _` | '_ \\| __|\n" +
-"  | |  __/>  <| |_| |_| | | | (_| | | | | |_ \n" +
-"  |_|\\___/_/\\_\\\\__|\\__,_|_|  \__,_|_| |_|\\__| " + `Version: v${packagejson.version}`)
-console.log("-".repeat(64))
-mainMenu.ask((choice) => {
-    console.log(choice)
-})
-/* orderFrom.ask(function(choice) {
-    try {
-        let theTexturant = require(`./texturants/${choice.toLowerCase()}.js`)
-        theTexturant.run(list)
-    } catch (err) {
-        console.log(err)
-    }
-}) */
+    clear()
+    console.log(" _____         _                         _   \n" + 
+    "|_   _|____  _| |_ _   _ _ __ __ _ _ __ | |_ \n" +
+    "  | |/ _ \\ \\/ / __| | | | '__/ _` | '_ \\| __|\n" +
+    "  | |  __/>  <| |_| |_| | | | (_| | | | | |_ \n" +
+    "  |_|\\___/_/\\_\\\\__|\\__,_|_|  \\__,_|_| |_|\\__|" + ` Version: v${packagejson.version}`)
+    console.log("-".repeat(64))
+    mainMenu.ask((choice) => {
+        switch(choice) {
+            case "Start":
+                clear()
+                orderFrom.ask(function(fchoice) {
+                    try {
+                        let theTexturant = require(`./texturants/${fchoice.toLowerCase()}.js`)
+                        theTexturant.run(list)
+                    } catch (err) {
+                        console.log(err)
+                    }
+                })
+                break;
+        }
+    })
 }
