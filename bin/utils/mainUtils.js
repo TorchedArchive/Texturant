@@ -13,5 +13,8 @@ module.exports = {
             })
         }
         return stuff["me"].items.coins;
+    },
+    say: function(name, speech) {
+        return `${name} > ${speech}`
     }
 }
