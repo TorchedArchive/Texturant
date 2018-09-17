@@ -10,7 +10,7 @@ const orderFrom = new list({
     choices: [
         "MacDonalds",
         {name: "Burger King", disabled: "Not done yet"},
-        {name: "Wendy's", disabled: "Not done yet"},
+        "Wendy's",
         {name: "Chick-fill-A", disabled: "Not done yet"}
     ]
 })
@@ -48,8 +48,8 @@ if (args[0]) {
                 clear()
                 orderFrom.ask(function(fchoice) {
                     try {
-                        let theTexturant = require(`./texturants/${fchoice.toLowerCase()}.js`)
-                        theTexturant.run(list)
+                        let theTexturant = require(`./texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
+                        theTexturant.run(utils, list)
                     } catch (err) {
                         console.log(err)
                     }
