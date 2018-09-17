@@ -7,15 +7,15 @@ That is the command to install Texturant, a CLI made to simulate ordering food o
 ![Usage](https://samuraistacks-leader-of-the.succ.world/i/nxrl6a52.gif)
 
 # Changelog
-+ Basic Money shell (Useable later): Test by doing `texturant money` report bugs at https://github.com/SamuraiStacks/Texturant/issues
-+ Menu Updates: Texturant in ASCII art, Show current version
-+ 3 items on the MacDonalds menu
++ Wendy's is finally here
++ Fixed something with the MacDonalds Texturant (look at the github)
++ Updated utils
 
 # Todo
 + All the other restaurant chains
 + More food on MacDonalds
-+ Money - 10% Done
-+ Update checker
++ Money - 10% Done - On hold
++ ~~Update checker~~ cancelled
 
 
 **I made this because I, SamuraiStacks had nothing to do and wanted to code something, so thanks to my lust for coding this now exists. :D xD**
