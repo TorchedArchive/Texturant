@@ -4,6 +4,7 @@ const args = process.argv.slice(2)
 const utils = require("./utils/mainUtils.js")
 const packagejson = require("../package.json")
 const clear = require("clear")
+const banners = require("./utils/ascii-banners")
 const orderFrom = new list({
     name: "orderFrom",
     message: "Where would I like to go today?",
@@ -36,11 +37,7 @@ if (args[0]) {
     }
 } else {
     clear()
-    console.log(" _____         _                         _   \n" + 
-    "|_   _|____  _| |_ _   _ _ __ __ _ _ __ | |_ \n" +
-    "  | |/ _ \\ \\/ / __| | | | '__/ _` | '_ \\| __|\n" +
-    "  | |  __/>  <| |_| |_| | | | (_| | | | | |_ \n" +
-    "  |_|\\___/_/\\_\\\\__|\\__,_|_|  \\__,_|_| |_|\\__|" + ` Version: v${packagejson.version}`)
+    console.log(`${banners.texturant} Version: v${packagejson.version}`)
     console.log("-".repeat(64))
     mainMenu.ask((choice) => {
         switch(choice) {
