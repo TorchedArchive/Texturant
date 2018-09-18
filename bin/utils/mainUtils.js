@@ -1,5 +1,5 @@
 const fs = require("fs")
-const stuff = JSON.parse(fs.readFileSync("./bin/utils/data.json", "utf8"))
+const stuff = JSON.parse(fs.readFileSync(__dirname + "/data.json", "utf8"))
 module.exports = {
     myCoins: function() {
         if(!stuff["me"]) {
