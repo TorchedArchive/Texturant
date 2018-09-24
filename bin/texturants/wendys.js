@@ -1,6 +1,7 @@
-exports.run = (utils, list) => {
+exports.run = (utils) => {
     const checkbox = require("prompt-checkbox")
     const clear = require("clear")
+    const list = require("prompt-list")
     clear()
     const Wendys = new list({
         name: "wendy's",

@@ -1,6 +1,7 @@
-exports.run = (list) => {
+exports.run = () => {
 const checkbox = require("prompt-checkbox")
 const clear = require("clear")
+const list = require("prompt-list")
     clear()
     const MacDonalds = new list({
         name: "macdonalds",
@@ -62,7 +63,7 @@ const clear = require("clear")
                 })
                 break;
             case "Burgers":
-                console.log("We do not have any burgers at the moment! Sorry for any inconvenience!\nTexturant CEO and Founder\n~ SamuraiStacks")
+                console.log("We do not have any burgers at the moment! Sorry for any inconvenience!\nTexturant CEO and Founder, SamuraiStacks")
                 break;
             default:
                 break;
