@@ -10,11 +10,13 @@ That is the command to install Texturant, a CLI made to simulate ordering food o
 + Wendy's is finally here
 + Fixed something with the MacDonalds Texturant (look at the github)
 + Updated utils
++ Works in any directory now instead of the install dir only
++ Cool looking main menu
 
 # Todo
 + All the other restaurant chains
 + More food on MacDonalds
-+ Money - 10% Done - On hold
++ Money: 10% Done - On hold
 + ~~Update checker~~ cancelled
 
 
