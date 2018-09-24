@@ -23,35 +23,49 @@ const mainMenu = new list({
         "Updates"
     ]
 })
+const fullScreen = new list({
+    message: "Are you in full screen?",
+    choices: [
+        "Yes",
+        "No.."
+    ]
+})
 
 if (args[0]) {
     switch (args[0]) {
         case "money":
             console.log(`I have ${utils.myCoins()} coins.`)
             break;
-        case "update":
-            console.log("Coming soon.")
-            break;
         default:
             break;
     }
 } else {
-    clear()
-    console.log(`${banners.texturant} Version: v${packagejson.version}`)
-    console.log("-".repeat(64))
-    mainMenu.ask((choice) => {
-        switch(choice) {
-            case "Start":
-                clear()
-                orderFrom.ask(function(fchoice) {
-                    try {
-                        let theTexturant = require(`./texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
-                        theTexturant.run(utils, list)
-                    } catch (err) {
-                        console.log(err)
-                    }
-                })
-                break;
+    console.log("As of v1.0.0 and up, we recommend to have your console in full screen.")
+    fullScreen.ask((i) => {
+        if(i === "Yes") {
+            clear()
+            console.log(`${banners.texturant} Version: v${packagejson.version}`)
+            console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
+            mainMenu.ask((choice) => {
+                switch(choice) {
+                    case "Start":
+                        clear()
+                        orderFrom.ask(function(fchoice) {
+                            try {
+                                let theTexturant = require(`./texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
+                                theTexturant.run(utils, list)
+                            } catch (err) {
+                                console.log(err)
+                            }
+                        })
+                        break;
+                }
+            })
+        } else {
+            console.log("Exitting..")
+            setTimeout(() => {
+                process.exit()
+            }, 4000);
         }
     })
 }
