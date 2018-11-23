@@ -68,8 +68,9 @@ function mainMenu() {
             case "My Coins":
                 console.log(`I have ${utils.myCoins()} coins!\n`)
                 new list({
+                    message: "Back to main menu",
                     choices: [
-                        "< Back"
+                        "Back"
                     ]
                 }).ask(() => {
                     mainMenu()
