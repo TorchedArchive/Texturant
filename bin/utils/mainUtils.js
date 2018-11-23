@@ -16,5 +16,11 @@ module.exports = {
     },
     say: function(name, speech) {
         return `${name} > ${speech}`
-    }
+    },
+    options: [
+        "MacDonalds",
+        {name: "Burger King", disabled: "Not done yet"},
+        "Wendy's",
+        {name: "Chick-fill-A", disabled: "Not done yet"}
+    ]
 }
