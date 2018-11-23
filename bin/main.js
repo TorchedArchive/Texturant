@@ -8,14 +8,9 @@ const banners = require("./utils/ascii-banners")
 const orderFrom = new list({
     name: "orderFrom",
     message: "Where would I like to go today?",
-    choices: [
-        "MacDonalds",
-        {name: "Burger King", disabled: "Not done yet"},
-        "Wendy's",
-        {name: "Chick-fill-A", disabled: "Not done yet"}
-    ]
+    choices: utils.options
 })
-const mainMenu = new list({
+const main_menu = new list({
     name: "Main Menu",
     choices: [
         "Start",
@@ -43,29 +38,43 @@ if (args[0]) {
     console.log("As of v1.0.0 and up, we recommend to have your console in full screen.")
     fullScreen.ask((i) => {
         if(i === "Yes") {
-            clear()
-            console.log(`${banners.texturant} Version: v${packagejson.version}`)
-            console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
-            mainMenu.ask((choice) => {
-                switch(choice) {
-                    case "Start":
-                        clear()
-                        orderFrom.ask(function(fchoice) {
-                            try {
-                                let theTexturant = require(`./texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
-                                theTexturant.run(utils, list)
-                            } catch (err) {
-                                console.log(err)
-                            }
-                        })
-                        break;
-                }
-            })
+            mainMenu()
         } else {
-            console.log("Exitting..")
+            console.log("Exitting in 4 seconds..")
             setTimeout(() => {
                 process.exit()
             }, 4000);
+        }
+    })
+}
+
+function mainMenu() {
+    clear()
+    console.log(`${banners.texturant} Version: v${packagejson.version}`)
+    console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
+    main_menu.ask((choice) => {
+        switch(choice) {
+            case "Start":
+                clear()
+                orderFrom.ask(function(fchoice) {
+                    try {
+                        let theTexturant = require(`./texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
+                        theTexturant.run(utils, list)
+                    } catch (err) {
+                        console.log(err)
+                    }
+                })
+                break;
+            case "My Coins":
+                console.log(`I have ${utils.myCoins()} coins!\n`)
+                new list({
+                    choices: [
+                        "< Back"
+                    ]
+                }).ask(() => {
+                    mainMenu()
+                })
+                break;
         }
     })
 }
