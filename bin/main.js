@@ -54,7 +54,7 @@ if (args[0]) {
 
 function mainMenu() {
     clear()
-    console.log(`${banners.texturant} Version: v${packagejson.version}`)
+    console.log(`${Utils.banners.texturant} Version: v${packagejson.version}`)
     console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
     main_menu.ask((choice) => {
         switch(choice) {
