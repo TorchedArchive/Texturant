@@ -17,7 +17,7 @@ That is the command to install Texturant, a CLI made to simulate ordering food o
 + All the other restaurant chains
 + More food on MacDonalds
 + Money: 10% Done - On hold
-+ ~~Update checker~~ cancelled
++ Update checker (I might try to work on it again)
 
 
-**I made this because I, SamuraiStacks had nothing to do and wanted to code something, so thanks to my lust for coding this now exists. :D xD**
+**Surprise Surprise, I made this because I was bored and wanted to code. Thank my boredom for this being a thing now :^)**
