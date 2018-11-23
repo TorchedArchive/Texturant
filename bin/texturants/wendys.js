@@ -1,4 +1,4 @@
-exports.run = (utils) => {
+exports.run = (Utils) => {
     const checkbox = require("prompt-checkbox")
     const clear = require("clear")
     const list = require("prompt-list")
@@ -25,9 +25,9 @@ exports.run = (utils) => {
                     ]
                 })
                 WENDYSCombos.ask((ans) => {
-                    console.log(utils.say("Haley", "I'll get your order in a bit.. Go to the next window please."))
+                    console.log(Utils.main.say("Haley", "I'll get your order in a bit.. Go to the next window please."))
                     setTimeout(() => {
-                        console.log(utils.say("Haley", "Here you go!"))
+                        console.log(Utils.main.say("Haley", "Here you go!"))
                         const speech = new list({
                             name: "speech",
                             message: "What to say to her?",
@@ -38,16 +38,16 @@ exports.run = (utils) => {
                             ]
                         })
                         speech.ask((choice) => {
-                            console.log(utils.say("You", choice))
+                            console.log(Utils.main.say("You", choice))
                             switch(choice) {
                                 case "Good day, thank you!":
-                                    console.log(utils.say("Haley", "You're welcome, good day to you too!"))
+                                    console.log(Utils.main.say("Haley", "You're welcome, good day to you too!"))
                                     break;
                                 case "Thanks.":
-                                    console.log(utils.say("Haley", "Oh no problem."))
+                                    console.log(Utils.main.say("Haley", "Oh no problem."))
                                     break;
                                 case "Okay later":
-                                    console.log(utils.say("Haley", "Come back soon."))
+                                    console.log(Utils.main.say("Haley", "Come back soon."))
                                     break;
                             }
                         })
