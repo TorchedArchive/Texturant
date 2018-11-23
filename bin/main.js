@@ -70,7 +70,7 @@ function mainMenu() {
                 })
                 break;
             case "My Coins":
-                console.log(`I have ${utils.myCoins()} coins!\n`)
+                console.log(`I have ${Utils.main.myCoins()} coins!\n`)
                 goBack()
                 break;
 
