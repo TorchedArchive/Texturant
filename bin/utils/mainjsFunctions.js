@@ -14,56 +14,60 @@ const main_menu = new list({
 
 const functions = {
     mainMenu: function() {
-        clear()
-        console.log(`${Utils.banners.texturant} Version: v${pkg.version}`)
-        console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
-        main_menu.ask((choice) => {
-            switch(choice) {
-                case "Start":
-                    clear()
-                    orderFrom.ask((fchoice) => {
-                        try {
-                            let theTexturant = require(`../texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
-                            theTexturant.run(Utils, list)
-                        } catch (err) {
-                            console.log(err)
-                        }
-                    })
-                    break;
-                case "My Coins":
-                    console.log(`I have ${Utils.main.myCoins()} coins!\n`)
-                    Utils.functions.goBack()
-                    break;
-
-                case "Updates":
-                    require("request").get("https://api.npms.io/v2/search?q=texturant", (err, res) => {
-                        if(err) return console.log("Could not check for latest version!")
-
-                        const result = JSON.parse(res.body)
-                        if(result.code) return console.log("Could not check for latest version! Try again later.")
-                        const version = result.results[0].package.version
-                        const myversion = pkg.version
-
-                        if(semver.compare(myversion, version) === -1) {
-                            console.log(marked(`Your version of Texturant (v${myversion}) is **outdated**! Please update to __v${version}__`))
-                        } else {
-                            console.log(`Your version of Texturant (v${myversion}) is up to date.`)
-                        }
-                    })
-                    break;                
-            }
-        })
-    },
-    goBack: function() {
-        return new (require("prompt-list"))({
-            message: "Back to main menu",
-            choices: [
-                "Back"
-            ]
-        }).ask(() => {
-            mainMenu()
-        })
+        noExportMenu()
     }
 }
 
+function goBack() {
+    return new (require("prompt-list"))({
+        message: "Back to main menu",
+        choices: [
+            "Back"
+        ]
+    }).ask(() => {
+        noExportMenu()
+    })
+}
+
+function noExportMenu() {
+    clear()
+    console.log(`${Utils.banners.texturant} Version: v${pkg.version}`)
+    console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
+    main_menu.ask((choice) => {
+        switch(choice) {
+            case "Start":
+                clear()
+                orderFrom.ask((fchoice) => {
+                    try {
+                        let theTexturant = require(`../texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
+                        theTexturant.run(Utils, list)
+                    } catch (err) {
+                        console.log(err)
+                    }
+                })
+                break;
+            case "My Coins":
+                console.log(`I have ${Utils.main.myCoins()} coins!\n`)
+                goBack()
+                break;
+
+            case "Updates":
+                require("request").get("https://api.npms.io/v2/search?q=texturant", (err, res) => {
+                    if(err) return console.log("Could not check for latest version!")
+
+                    const result = JSON.parse(res.body)
+                    if(result.code) return console.log("Could not check for latest version! Try again later.")
+                    const version = result.results[0].package.version
+                    const myversion = pkg.version
+
+                    if(semver.compare(myversion, version) === -1) {
+                        console.log(marked(`Your version of Texturant (v${myversion}) is **outdated**! Please update to __v${version}__`))
+                    } else {
+                        console.log(`Your version of Texturant (v${myversion}) is up to date.`)
+                    }
+                })
+                break;                
+        }
+    })
+}
 module.exports = functions;
