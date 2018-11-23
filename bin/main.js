@@ -63,7 +63,7 @@ function mainMenu() {
                 orderFrom.ask((fchoice) => {
                     try {
                         let theTexturant = require(`./texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
-                        theTexturant.run(utils, list)
+                        theTexturant.run(Utils, list)
                     } catch (err) {
                         console.log(err)
                     }
