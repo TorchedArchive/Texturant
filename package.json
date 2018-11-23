@@ -1,8 +1,8 @@
 {
   "name": "texturant",
-  "version": "0.0.7",
+  "version": "1.0.1-beta",
   "description": "A command line interface to simulate ordering food on a computer I guess",
-  "main": "bin/food.js",
+  "main": "bin/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,9 +19,19 @@
   "dependencies": {
     "clear": "^0.1.0",
     "prompt-checkbox": "^2.2.0",
-    "prompt-list": "^3.2.0"
+    "prompt-list": "^3.2.0",
+    "snekfetch": "^4.0.4"
   },
   "bin": {
-    "texturant": "bin/food.js"
-  }
+    "texturant": "bin/main.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuraiStacks/Texturant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SamuraiStacks/Texturant/issues"
+  },
+  "homepage": "https://github.com/SamuraiStacks/Texturant#readme"
 }
