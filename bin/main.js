@@ -1,14 +1,18 @@
 #! /usr/bin/env node
 const list = require("prompt-list")
 const args = process.argv.slice(2)
-const utils = require("./utils/mainUtils.js")
+const Utils = new (require("./utils/Utils.js"))()
 const packagejson = require("../package.json")
 const clear = require("clear")
-const banners = require("./utils/ascii-banners")
+const semver = require("semver")
+const TerminalRenderer = require('marked-terminal');
+const marked = require('marked').setOptions({
+  renderer: new TerminalRenderer()
+});
 const orderFrom = new list({
     name: "orderFrom",
     message: "Where would I like to go today?",
-    choices: utils.options
+    choices: Utils.main.options
 })
 const main_menu = new list({
     name: "Main Menu",
@@ -29,7 +33,7 @@ const fullScreen = new list({
 if (args[0]) {
     switch (args[0]) {
         case "money":
-            console.log(`I have ${utils.myCoins()} coins.`)
+            console.log(`I have ${Utils.main.myCoins()} coins.`)
             break;
         default:
             break;
@@ -56,7 +60,7 @@ function mainMenu() {
         switch(choice) {
             case "Start":
                 clear()
-                orderFrom.ask(function(fchoice) {
+                orderFrom.ask((fchoice) => {
                     try {
                         let theTexturant = require(`./texturants/${fchoice.toLowerCase().replace("'", "")}.js`)
                         theTexturant.run(utils, list)
@@ -67,15 +71,25 @@ function mainMenu() {
                 break;
             case "My Coins":
                 console.log(`I have ${utils.myCoins()} coins!\n`)
-                new list({
-                    message: "Back to main menu",
-                    choices: [
-                        "Back"
-                    ]
-                }).ask(() => {
-                    mainMenu()
-                })
+                goBack()
                 break;
+
+            case "Updates":
+                require("request").get("https://api.npms.io/v2/search?q=texturant", (err, res) => {
+                    if(err) return console.log("Could not check for latest version!")
+
+                    const result = JSON.parse(res.body)
+                    if(result.code) return console.log("Could not check for latest version! Try again later.")
+                    const version = result.results[0].package.version
+                    const myversion = packagejson.version
+
+                    if(semver.compare(myversion, version) === -1) {
+                        console.log(marked(`Your version of Texturant (v${myversion}) is **outdated**! Please update to __v${version}__`))
+                    } else {
+                        console.log(`Your version of Texturant (v${myversion}) is up to date.`)
+                    }
+                })
+                break;                
         }
     })
 }
