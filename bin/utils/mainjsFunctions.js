@@ -11,6 +11,11 @@ const main_menu = new list({
         "Updates"
     ]
 })
+const orderFrom = new list({
+    name: "orderFrom",
+    message: "Where would I like to go today?",
+    choices: Utils.main.options
+})
 
 const functions = {
     mainMenu: function() {
