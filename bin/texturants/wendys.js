@@ -2,6 +2,7 @@ exports.run = (Utils) => {
     const checkbox = require("prompt-checkbox")
     const clear = require("clear")
     const list = require("prompt-list")
+    const selection = require("../utils/selection/wendys.json")
     clear()
     const Wendys = new list({
         name: "wendy's",
@@ -17,14 +18,9 @@ exports.run = (Utils) => {
                 WENDYSCombos = new checkbox({
                     name: "wendys_combos",
                     message: "You selected the Combos category. Select item(s) you would like with *spacebar* and confirm with *Enter*.",
-                    choices: [
-                        "Dave's Single",
-                        "Dave's Double",
-                        "Dave's Triple",
-                        "Baconator"
-                    ]
+                    choices: selection.combos
                 })
-                WENDYSCombos.ask((ans) => {
+                WENDYSCombos.ask(() => {
                     console.log(Utils.main.say("Haley", "I'll get your order in a bit.. Go to the next window please."))
                     setTimeout(() => {
                         console.log(Utils.main.say("Haley", "Here you go!"))
