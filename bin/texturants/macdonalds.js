@@ -1,4 +1,4 @@
-exports.run = () => {
+exports.run = (Utils) => {
 const checkbox = require("prompt-checkbox")
 const clear = require("clear")
 const list = require("prompt-list")
@@ -31,35 +31,39 @@ const list = require("prompt-list")
                     ]
                 })
                 MCDBreakfast.ask(function(ans) {
-                    console.log(`Susan > I will get you your ${ans.length > 1 ? `${ans.slice(0, ans.length - 1).join(", ")} and ${ans.slice(-1).pop()}` : ans.join(", ")}. Pull-up to the next window`)
-                    setTimeout(() => {
-                        console.log("Susan > Here is your order!")
-                            let speech = new list({
-                                name: "speech",
-                                message: "(What should I say?)",
-                                choices: [
-                                    "Thanks! Have a nice day!",
-                                    "Yeah whatever..",
-                                    "Okay bye."
-                                ]
-                            })
-                            speech.ask(function(ans) {
-                                console.log(`You > ${ans}`)
-                                switch (ans) {
-                                    case "Thanks! Have a nice day!":
-                                        console.log("Susan > You too! Come again!")
-                                        break;
-                                    case "Yeah whatever..":
-                                        console.log("Susan > Bye.")
-                                        break;
-                                    case "Okay bye.":
-                                        console.log("Susan > Later...")
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            })
-                    }, 5000);
+                    if(ans.length === 0) {
+                        Utils.main.say("Susan", "If you aren't going to order anything, why did you come here?")
+                    } else {
+                        console.log(`Susan > I will get you your ${ans.length > 1 ? `${ans.slice(0, ans.length - 1).join(", ")} and ${ans.slice(-1).pop()}` : ans.join(", ")}. Pull-up to the next window`)
+                        setTimeout(() => {
+                            console.log("Susan > Here is your order!")
+                                let speech = new list({
+                                    name: "speech",
+                                    message: "(What should I say?)",
+                                    choices: [
+                                        "Thanks! Have a nice day!",
+                                        "Yeah whatever..",
+                                        "Okay bye."
+                                    ]
+                                })
+                                speech.ask(function(ans) {
+                                    console.log(`You > ${ans}`)
+                                    switch (ans) {
+                                        case "Thanks! Have a nice day!":
+                                            console.log("Susan > You too! Come again!")
+                                            break;
+                                        case "Yeah whatever..":
+                                            console.log("Susan > Bye.")
+                                            break;
+                                        case "Okay bye.":
+                                            console.log("Susan > Later...")
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                })
+                        }, 5000);
+                    }
                 })
                 break;
             case "Burgers":
