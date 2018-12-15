@@ -15,7 +15,7 @@ module.exports = {
         return stuff["me"].items.coins;
     },
     say: function(name, speech) {
-        return `${name} > ${speech}`
+        return console.log(`${name} > ${speech}`)
     },
     options: [
         "MacDonalds",
