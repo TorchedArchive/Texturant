@@ -1,6 +1,6 @@
 {
   "name": "texturant",
-  "version": "1.0.1-beta",
+  "version": "1.1.0",
   "description": "A command line interface to simulate ordering food on a computer I guess",
   "main": "bin/main.js",
   "scripts": {
