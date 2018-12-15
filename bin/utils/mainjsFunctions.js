@@ -8,7 +8,8 @@ const main_menu = new list({
     choices: [
         "Start",
         "My Coins",
-        "Updates"
+        "Updates",
+        "Exit"
     ]
 })
 const orderFrom = new list({
@@ -71,7 +72,10 @@ function noExportMenu() {
                         console.log(`Your version of Texturant (v${myversion}) is up to date.`)
                     }
                 })
-                break;                
+                break;
+            case "Exit":
+                console.log("Exitting Texturant..")
+                setTimeout(() => process.exit(), 3000)            
         }
     })
 }
