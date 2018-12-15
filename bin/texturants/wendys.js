@@ -42,7 +42,7 @@ exports.run = (Utils) => {
                                 case "Thanks.":
                                     console.log(Utils.main.say("Haley", "Oh no problem."))
                                     break;
-                                case "Okay later":
+                                case "Okay later..":
                                     console.log(Utils.main.say("Haley", "Come back soon."))
                                     break;
                             }
@@ -51,10 +51,43 @@ exports.run = (Utils) => {
                 })
                 break;
             case "Breakfast":
-                console.log("All of this is coming soon!\nTexturant Founder and CEO SamuraiStacks")    
-                break;
-            default:
-                break;
+            WENDYSBreakfirst = new checkbox({
+                name: "wendys_breakfirst",
+                message: "Looks like you want some breakfirst items to eat. Move with your arrow keys, select with spacebar and confirm with enter.",
+                choices: selection.breakfast
+            })
+            WENDYSBreakfirst.ask(() => {
+                console.log(Utils.main.say("Haley", "Please be patient.. I'll prep your order soon."))
+                setTimeout(() => {
+                    console.log(Utils.main.say("Haley", "There you are!"))
+                    const speech = new list({
+                        name: "speech",
+                        message: "What to say to her?",
+                        choices: [
+                            "Good day, thank you!",
+                            "Thanks.",
+                            "Okay later.."
+                        ]
+                    })
+                    speech.ask((choice) => {
+                        console.log(Utils.main.say("You", choice))
+                        switch(choice) {
+                            case "Good day, thank you!":
+                                console.log(Utils.main.say("Haley", "You're welcome, good day to you too!"))
+                                break;
+                            case "Thanks.":
+                                console.log(Utils.main.say("Haley", "Oh no problem."))
+                                break;
+                            case "Okay later..":
+                                console.log(Utils.main.say("Haley", "Come back soon."))
+                                break;
+                        }
+                    })
+                }, 5000)
+            })
+            break;
+        default:
+            break;
         }
     })
 }
