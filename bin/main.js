@@ -2,7 +2,7 @@
 // Everything here we need to use in the main file
 const inquirer = require("inquirer")
 const args = process.argv.slice(2)
-// const Utils = new (require("./files/Utils.js"))()
+const Utils = require("./files/utils/Utils.js")
 
 // Ask if the user is in full screen
 inquirer.prompt({
@@ -15,13 +15,12 @@ inquirer.prompt({
     ]
 }).then(a => {
     if (a.fullscreen === "Yes") {
-        process.stdout.write('\033c');
+        Utils.functions.clear()
         // Utils.functions.mainMenu()
     } else {
-        process.stdout.write('\033c');
-        console.log("Things might look weird if you are not in fullscreen.")
+        console.log("\nThings might look weird if you are not in fullscreen.")
         setTimeout(() => {
-            // Utils.functions.mainMenu()
+            Utils.main.mainMenu()
         }, 4000)
     }
 })
