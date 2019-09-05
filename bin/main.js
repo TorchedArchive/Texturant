@@ -8,7 +8,7 @@ const Utils = require("./files/utils/Utils.js")
 inquirer.prompt({
     type: "list",
     name: "fullscreen",
-    message: "It is recommended that you use Texturant in a full screen terminal.\n  A    re you in fullscreen?",
+    message: "It is recommended that you use Texturant in a full screen terminal.\n Are you in fullscreen?",
     choices: [
         "Yes",
         "No"
