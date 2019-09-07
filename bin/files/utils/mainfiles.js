@@ -21,6 +21,7 @@ module.exports = {
                 "Exit"
             ]
         }).then(m => {
+            Utils.functions.clear()
             switch(m.mainmenu) {
                 case "Order":
                     inquirer.prompt({
@@ -31,6 +32,7 @@ module.exports = {
                     }).then(e => {
                         try {
                             let texturant = require(`../../texturants/${e.orderlist.toLowerCase().replace("'", "").replace(" ", "")}`)
+                            Utils.functions.clear()
                             texturant.run(Utils)
                         } catch (err) {
                             console.error(err)
