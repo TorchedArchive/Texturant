@@ -1,10 +1,15 @@
+const Utils = require("./Utils.js")
 const pkg = require("../../../package.json")
 const inquirer = require("inquirer")
-const Utils = require("./Utils.js")
 module.exports = {
-    mainMenu: function() {
+    menu: _menu()
+}
+    function _menu() {
+        Utils.functions.clear()
+        console.log(`${Utils.etc.banners.texturant} Version: v${pkg.version}`)
+        console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
         inquirer.prompt({
-            type: "list",
+            type: list,
             name: "mainmenu",
             message: "Texturant Main Menu",
             choices: [
@@ -12,19 +17,16 @@ module.exports = {
                 "Check for Updates",
                 "Exit"
             ]
-        }).then(a => {
-            switch(a.mainmenu) {
+        }).then(m => {
+            switch(m.mainmenu) {
                 case "Order":
                     inquirer.prompt({
                         type: "list",
                         name: "orderlist",
-                        message: "Where would I like to go today?",
-                        choices: Utils.etc.orderlist
-                    }).then(a => {
-                        console.log(a)
+                        message: "Where would you like to go today?",
+                        choices: Utils.etc.orderfrom
                     })
                 break;
             }
         })
     }
-}
