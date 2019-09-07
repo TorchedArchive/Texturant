@@ -1,6 +1,6 @@
 Development version of Texturant.
 If you want to use this version, you can wait for a working patch or do some coding yourself. Don't use this version unless you know how to fix problems you come by.
-I will **not** be helping anyone using this version.
+__***I will not be helping anyone using this version.***__
 
 Anyway, here is some content of the original README.
 
