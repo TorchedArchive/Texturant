@@ -16,11 +16,11 @@ inquirer.prompt({
 }).then(a => {
     if (a.fullscreen === "Yes") {
         Utils.functions.clear()
-        // Utils.functions.mainMenu()
+        // Utils.main.menu()
     } else {
         console.log("\nThings might look weird if you are not in fullscreen.")
         setTimeout(() => {
-            Utils.main.mainMenu()
+            Utils.main.menu()
         }, 4000)
     }
 })
