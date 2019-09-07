@@ -1,10 +1,25 @@
-Hello! Welcome to the Texturant! The virtual resturant chain of real restaurant chains!
+Welcome to the Texturant. How may I help you today?
 
-`npm i -g texturant`
-That is the command to install Texturant, a CLI made to simulate ordering food on a computer.
+Texturant is a Node.js command line interface app made to simulate what I think it would be like ordering food in a complete terminal environment.
+It is constantly being updated, and new features will be coming soon. Stay updated!
 
-# Usage Example
+# Installation
+You can install Texturant with npm, with:
+
+`npm install texturant --global`
+
+That will install Texturant, and it will work no matter what directory you are in.
+
+
+# Documentation
+PS: Extra docs will be coming soon.
+
+
+## Usage Example
+Here is an example of how you can use Texturant, made by me.
+
 ![Usage](https://skullbite.is-for.me/i/6mtmta57.gif)
+
 
 # Changelog
 + Update checker
@@ -13,10 +28,11 @@ That is the command to install Texturant, a CLI made to simulate ordering food o
 + All items on main menu work
 + Exit option
 
+
 # Todo
 + All the other restaurant chains
 + More food on MacDonalds
 + Money: 1/3 (~~Implementing~~, Earning, Using)
 
 
-**Surprise Surprise, I made this because I was bored and wanted to code. Thank my boredom for this being a thing now :^)**
+Fun Fact: This was made purely out of boredom. I just needed something to code and, here we are now.
