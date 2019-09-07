@@ -2,11 +2,14 @@ const Utils = require("./Utils.js")
 const pkg = require("../../../package.json")
 const inquirer = require("inquirer")
 module.exports = {
-    menu: _menu()
+    menu: function() {
+        _menu()
+    }
 }
     function _menu() {
         Utils.functions.clear()
-        console.log(`${Utils.etc.banners.texturant} Version: v${pkg.version}`)
+        console.log("Texturant")
+        // console.log(`${Utils.etc.banners.texturant} Version: v${pkg.version}`)
         console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
         inquirer.prompt({
             type: list,
@@ -27,6 +30,6 @@ module.exports = {
                         choices: Utils.etc.orderfrom
                     })
                 break;
-            }
-        })
+            } 
+        }) 
     }
