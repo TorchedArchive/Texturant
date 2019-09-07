@@ -1,7 +1,7 @@
 Welcome to the Texturant. How may I help you today?
 
 Texturant is a Node.js command line interface app made to simulate what I think it would be like ordering food in a complete terminal environment.
-It is constantly being updated, and new features will be coming soon. Stay updated!
+It is constantly being updated, and new features will be coming soon. Stay tuned!
 
 # Installation
 You can install Texturant with npm, with:
