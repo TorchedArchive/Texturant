@@ -12,7 +12,7 @@ module.exports = {
         // console.log(`${Utils.etc.banners.texturant} Version: v${pkg.version}`)
         console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
         inquirer.prompt({
-            type: list,
+            type: "list",
             name: "mainmenu",
             message: "Texturant Main Menu",
             choices: [
