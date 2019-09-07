@@ -8,8 +8,7 @@ module.exports = {
 }
     function _menu() {
         Utils.functions.clear()
-        console.log("Texturant")
-        // console.log(`${Utils.etc.banners.texturant} Version: v${pkg.version}`)
+        console.log(`${Utils.etc.banners} Version: v${pkg.version}`)
         console.log(`\t\t\t\t\t  ${"-".repeat(72)}`)
         inquirer.prompt({
             type: "list",
