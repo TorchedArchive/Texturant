@@ -28,6 +28,13 @@ module.exports = {
                         name: "orderlist",
                         message: "Where would you like to go today?",
                         choices: Utils.etc.orderfrom
+                    }).then(e => {
+                        try {
+                            let texturant = require(`../../texturants/${e.orderlist.toLowerCase().replace("'", "").replace(" ", "")}`)
+                            texturant.run(Utils)
+                        } catch (err) {
+                            console.error(err)
+                        }
                     })
                 break;
             } 
