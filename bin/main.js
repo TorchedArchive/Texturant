@@ -16,7 +16,7 @@ inquirer.prompt({
 }).then(a => {
     if (a.fullscreen === "Yes") {
         Utils.functions.clear()
-        // Utils.main.menu()
+        Utils.main.menu()
     } else {
         console.log("\nThings might look weird if you are not in fullscreen.")
         setTimeout(() => {
