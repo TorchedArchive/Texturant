@@ -20,6 +20,7 @@ inquirer.prompt({
     } else {
         console.log("\nThings might look weird if you are not in fullscreen.")
         setTimeout(() => {
+            Utils.functions.clear()
             Utils.main.menu()
         }, 4000)
     }
