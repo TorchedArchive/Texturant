@@ -1,33 +1,27 @@
 #! /usr/bin/env node
-const list = require("prompt-list")
+// Everything here we need to use in the main file
+const inquirer = require("inquirer")
 const args = process.argv.slice(2)
-const Utils = new (require("./utils/Utils.js"))()
-const fullScreen = new list({
-    message: "Are you in full screen?",
+const Utils = require("./files/utils/Utils.js")
+
+// Ask if the user is in full screen
+inquirer.prompt({
+    type: "list",
+    name: "fullscreen",
+    message: "It is recommended that you use Texturant in a full screen terminal.\n Are you in fullscreen?",
     choices: [
         "Yes",
-        "No.."
+        "No"
     ]
-})
-
-if (args[0]) {
-    switch (args[0]) {
-        case "money":
-            console.log(`I have ${Utils.main.myCoins()} coins.`)
-            break;
-        default:
-            break;
+}).then(a => {
+    if (a.fullscreen === "Yes") {
+        Utils.functions.clear()
+        Utils.main.menu()
+    } else {
+        console.log("\nThings might look weird if you are not in fullscreen.")
+        setTimeout(() => {
+            Utils.functions.clear()
+            Utils.main.menu()
+        }, 4000)
     }
-} else {
-    console.log("As of v1.0.0 and up, we recommend to have your console in full screen.")
-    fullScreen.ask((i) => {
-        if(i === "Yes") {
-            Utils.functions.mainMenu()
-        } else {
-            console.log("Exitting in 4 seconds..")
-            setTimeout(() => {
-                process.exit()
-            }, 4000);
-        }
-    })
-}
+})

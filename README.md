@@ -20,19 +20,15 @@ Here is an example of how you can use Texturant, made by me.
 
 ![Usage](https://skullbite.is-for.me/i/6mtmta57.gif)
 
-
 # Changelog
-+ Update checker
-+ Breakfast category (Wendy's)
-+ All items in Combos (Wendy's)
-+ All items on main menu work
-+ Exit option
++ Rewrote most files
++ Remove extra dependencies
++ Clean up some code
 
 
 # Todo
-+ All the other restaurant chains
-+ More food on MacDonalds
-+ Money: 1/3 (~~Implementing~~, Earning, Using)
++ Restore all old texturants
++ Make v2 fully stable
 
 
 Fun Fact: This was made purely out of boredom. I just needed something to code and, here we are now.
