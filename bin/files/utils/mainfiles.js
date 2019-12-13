@@ -9,7 +9,7 @@ module.exports = {
     function _menu() {
         Utils.functions.clear()
         console.log(`${Utils.etc.banners.texturant}  Version: v${pkg.version}`)
-        console.log(` ${"-".repeat(72)}`)
+        console.log(`${"-".repeat(72)}`)
         inquirer.prompt({
             type: "list",
             name: "mainmenu",
