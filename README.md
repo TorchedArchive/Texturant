@@ -1,13 +1,34 @@
-Development version of Texturant.
-If you want to use this version, you can wait for a working patch or do some coding yourself. Don't use this version unless you know how to fix problems you come by.
-__***I will not be helping anyone using this version.***__
+Welcome to the Texturant. How may I help you today?
 
-Anyway, here is some content of the original README.
+Texturant is a Node.js command line interface app made to simulate what I think it would be like ordering food in a complete terminal environment.
+It is constantly being updated, and new features will be coming soon. Stay tuned!
 
-`npm i -g texturant`
-That is the command to install Texturant, a CLI made to simulate ordering food on a computer.
+# Installation
+You can install Texturant with npm, with:
 
-# Usage Example
+`npm install texturant --global`
+
+That will install Texturant, and it will work no matter what directory you are in.
+
+
+# Documentation
+PS: Extra docs will be coming soon.
+
+
+## Usage Example
+Here is an example of how you can use Texturant, made by me.
+
 ![Usage](https://skullbite.is-for.me/i/6mtmta57.gif)
 
-**Surprise Surprise, I made this because I was bored and wanted to code. Thank my boredom for this being a thing now :^)**
+# Changelog
++ Rewrote most files
++ Remove extra dependencies
++ Clean up some code
+
+
+# Todo
++ Restore all old texturants
++ Make v2 fully stable
+
+
+Fun Fact: This was made purely out of boredom. I just needed something to code and, here we are now.
