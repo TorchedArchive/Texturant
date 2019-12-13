@@ -30,9 +30,9 @@ module.exports.run = function(Utils) {
                 if(cc.mb_breakfast.length === 0) {
                     console.log("Susan > If you aren't going to order anything, why come here?")
                 } else {
-                    console.log(`${cc.mb_breakfast.length > 1 ? `${cc.mb_breakfast.slice(0, cc.mb_breakfast.length - 1).join(", ")} and ${cc.mb_breakfast.slice(-1).pop()}` : cc.mb_breakfast.join(", ")}`)
+                    console.log(`Getting ready to deliver your ${cc.mb_breakfast.length > 1 ? `${cc.mb_breakfast.slice(0, cc.mb_breakfast.length - 1).join(", ")} and ${cc.mb_breakfast.slice(-1).pop()}` : cc.mb_breakfast.join(", ")}.`)
                     setTimeout(() => {
-                        console.log("success! isnt this epic")
+                        console.log("Your items have been delivered!")
                     }, 5000)
                 }
             })
