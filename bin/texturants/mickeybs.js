@@ -32,7 +32,7 @@ module.exports.run = function(Utils) {
                 } else {
                     console.log(`${cc.mb_breakfast.length > 1 ? `${cc.mb_breakfast.slice(0, cc.mb_breakfast.length - 1).join(", ")} and ${cc.mb_breakfast.slice(-1).pop()}` : cc.mb_breakfast.join(", ")}`)
                     setTimeout(() => {
-                        console.log("success!")
+                        console.log("success! isnt this epic")
                     }, 5000)
                 }
             })
