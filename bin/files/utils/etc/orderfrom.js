@@ -1,3 +1,4 @@
 module.exports = [
-        "Mickey B's"
+        "Mickey B's",
+        "Hammy's"
 ]
