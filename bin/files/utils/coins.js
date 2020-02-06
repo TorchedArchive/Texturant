@@ -33,6 +33,14 @@ module.exports = {
             })
         } else {
             stuff = JSON.parse(fs.readFileSync(`${__dirname}/data.json`), "utf8")
+            stuff["me"] = {
+                items: {
+                    coins: stuff["me"].items.coins + num
+                }
+            }
+            fs.writeFile("./bin/files/utils/data.json", JSON.stringify(stuff), (err) => {
+                if(err) return console.log(`\n\n${err}\nReport this bug on https://github.com/SamuraiStacks/Texturant`)
+            })
         }
         return;
     }
