@@ -22,7 +22,8 @@ module.exports = {
                 "Check for Updates",
                 "My coins",
                 "Work",
-                "Exit"
+                "Exit",
+                "Test"
             ]
         }).then(m => {
             Utils.functions.clear()
@@ -49,6 +50,9 @@ module.exports = {
                 break;
                 case "Work":
                     Utils.coins.earn()
+                break;
+                case "Test":
+                    // console.log(Utils.etc.selections.hammys.combos)
                 break;
             } 
         }) 

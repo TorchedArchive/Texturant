@@ -16,15 +16,17 @@ exports.run = (Utils) => {
                     type: "checkbox",
                     name: "hammys_combos",
                     message: "So you have decided to have a combo? Select which one(s) you would like!",
-                    choices: selections.combos
+                    choices: Object.keys(selections.combos)
                 }).then(c => {
                     if(c.hammys_combos.length === 0) {
                         console.log("John > Cmon bro, why you gotta waste my time?")
                     } else {
+                        Utils.coins.removeCoins(0)
+                        /*
                         console.log("John > Getting your stuff delivered bro.")
                         setTimeout(() => {
                             console.log("Texturant > Items have been delivered!")
-                        }, 2000)
+                        }, 2000) */
                     }
                 })
             break;
