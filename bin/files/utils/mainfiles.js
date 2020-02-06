@@ -17,6 +17,7 @@ module.exports = {
             choices: [
                 "Order",
                 "Check for Updates",
+                "My coins",
                 "Exit"
             ]
         }).then(m => {
@@ -38,6 +39,23 @@ module.exports = {
                         }
                     })
                 break;
+                case "My coins":
+                    console.log(`I have ${Utils.coins.count()} coins.`)
+                    back()
+                break;
             } 
         }) 
     }
+
+function back() {
+    return new (require("inquirer")).prompt({
+        name: "back",
+        type: "list",
+        message: "Back to main menu",
+        choices: [
+            "Back"
+        ]
+    }).then(() => {
+        _menu()
+    })
+}
