@@ -4,6 +4,9 @@ const inquirer = require("inquirer")
 module.exports = {
     menu: function() {
         _menu()
+    },
+    back: function() {
+        _back()
     }
 }
     function _menu() {
@@ -18,6 +21,7 @@ module.exports = {
                 "Order",
                 "Check for Updates",
                 "My coins",
+                "Work",
                 "Exit"
             ]
         }).then(m => {
@@ -41,13 +45,16 @@ module.exports = {
                 break;
                 case "My coins":
                     console.log(`I have ${Utils.coins.count()} coins.`)
-                    back()
+                    _back()
+                break;
+                case "Work":
+                    Utils.coins.earn()
                 break;
             } 
         }) 
     }
 
-function back() {
+function _back() {
     return new (require("inquirer")).prompt({
         name: "back",
         type: "list",
