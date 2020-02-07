@@ -11,8 +11,7 @@ module.exports = {
                     coins: 0
                 },
                 times: {
-                    lastWork: 0,
-                    lastDaily: 0
+                    lastWork: 0
                 }
             }
             fs.writeFile("./bin/files/utils/data.json", JSON.stringify(stuff), (err) => {
@@ -49,6 +48,9 @@ module.exports = {
         stuff["me"] = {
             items: {
                 coins: stuff["me"].items.coins + num
+            },
+            times: {
+                lastWork: stuff["me"].times.lastWork
             }
         }
         fs.writeFile("./bin/files/utils/data.json", JSON.stringify(stuff), (err) => {
@@ -61,6 +63,9 @@ module.exports = {
         stuff["me"] = {
             items: {
                 coins: stuff["me"].items.coins - num
+            },
+            times: {
+                lastWork: stuff["me"].times.lastWork
             }
         }
         fs.writeFile("./bin/files/utils/data.json", JSON.stringify(stuff), (err) => {

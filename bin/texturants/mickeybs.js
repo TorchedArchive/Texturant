@@ -22,7 +22,7 @@ module.exports.run = function(Utils) {
                     if (cc.mb_breakfast.length === 0) {
                         console.log("Susan > If you aren't going to order anything, why come here?")
                     } else {
-                        const price = Utils.coins.process(selections.combos, c.hammys_combos)
+                        const price = Utils.coins.process(selections.breakfast, cc.mb_breakfast)
 
                         inquirer.prompt({
                             type: "list",
@@ -37,7 +37,7 @@ module.exports.run = function(Utils) {
                                 if (price > Utils.coins.count()) {
                                     console.log("Texturant > Seems as though you don't have enough coins for this.\nGo work a shift to get more coins, and come back later!")
                                 } else {
-                                    Utils.coins.removeCoins(price) n
+                                    Utils.coins.removeCoins(price)
                                     console.log("Susan > Thank you, come again!")
                                 }
                             } else {
@@ -47,7 +47,9 @@ module.exports.run = function(Utils) {
                     }
                 })
             break;
-            case "Burgers"
+            case "Burgers":
+                console.log("We are currently working on the Burgers menu. Check back in the future.\n\t- sammy, Texturant CEO")
+            break;
         }
     })
 }

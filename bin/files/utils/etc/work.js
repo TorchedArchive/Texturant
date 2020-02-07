@@ -28,6 +28,10 @@ module.exports = (Utils) => {
                     Utils.main.back()
                 }
             break;
+            case "Ask for Promotion":
+                console.log("sammy > That's gonna be a no from me.")
+                Utils.main.back()
+            break;
         }
     })
 }
