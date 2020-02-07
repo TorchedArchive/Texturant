@@ -21,7 +21,14 @@ exports.run = (Utils) => {
                     if(c.hammys_combos.length === 0) {
                         console.log("John > Cmon bro, why you gotta waste my time?")
                     } else {
-                        Utils.coins.process(selections.combos, c.hammys_combos)
+                        const price = Utils.coins.process(selections.combos, c.hammys_combos)
+                        
+                        if(price > Utils.coins.count()) {
+                            console.log("Texturant > Seems as though you don't have enough coins for this.\nGo work a shift to get more coins, and come back later!")
+                        } else {
+                            Utils.coins.removeCoins(price)
+                            console.log("John > Thanks for the purchase!")
+                        }
                         /*
                         console.log("John > Getting your stuff delivered bro.")
                         setTimeout(() => {

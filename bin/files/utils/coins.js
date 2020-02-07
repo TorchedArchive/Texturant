@@ -67,9 +67,12 @@ module.exports = {
         return;
     },
     process: function(selection, items) {
-        const total = 0
+        let total = 0
         for(const i of items) {
-            console.log(`${i}: ${selection[i]}`)
+            console.log(`${i}: ${selection[i]} coins`)
+            total = total + selection[i]
         }
+        console.log(`\nTotal: ${total} coins!`);
+        return total;
     }
 }
