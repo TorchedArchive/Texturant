@@ -1,6 +1,8 @@
 const Utils = require("./Utils.js")
 const pkg = require("../../../package.json")
 const inquirer = require("inquirer")
+const semver = require("semver")
+
 module.exports = {
     menu: function() {
         _menu()
@@ -43,6 +45,23 @@ module.exports = {
                         }
                     })
                 break;
+                case "Check for Updates":
+                    require("node-fetch")("https://api.npms.io/v2/search?q=texturant")
+                    .then(res => res.json())
+                    .then(r => {
+                        if(r.code) return console.log("Could not check for information! Try again later.")
+
+                        const version = r.results[0].package.version
+                        const myversion = pkg.version
+
+                        if(semver.compare(myversion, version) === -1) {
+                            console.log(`Your version of Texturant (${myversion}) is out of date! The latest version is ${version}`)
+                        } else {
+                            console.log(`Your version of Texturant (${myversion}) is up to date.`)
+                        }
+                        _back()
+                    })
+                break;
                 case "My coins":
                     console.log(`I have ${Utils.coins.count()} coins.`)
                     _back()
@@ -54,7 +73,8 @@ module.exports = {
                     console.log("See ya next time!")
                     setTimeout(() => {
                         process.exit()
-                    })
+                    }, 1000)
+                break;
             } 
         }) 
     }

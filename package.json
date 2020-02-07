@@ -17,7 +17,9 @@
   "author": "SamuraiStacks",
   "license": "Apache-2.0",
   "dependencies": {
-    "inquirer": "^7.0.0"
+    "inquirer": "^7.0.0",
+    "node-fetch": "^2.6.0",
+    "semver": "^7.1.2"
   },
   "bin": {
     "texturant": "bin/main.js"
@@ -25,10 +27,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SamuraiStacks/Texturant.git"
+    "url": "git+https://github.com/Terminalfreaks/Texturant.git"
   },
   "bugs": {
-    "url": "https://github.com/SamuraiStacks/Texturant/issues"
+    "url": "https://github.com/Terminalfreaks/Texturant/issues"
   },
-  "homepage": "https://github.com/SamuraiStacks/Texturant#readme"
+  "homepage": "https://github.com/Terminalfreaks/Texturant#readme"
 }
