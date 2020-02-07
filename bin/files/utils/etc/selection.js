@@ -1,4 +1,18 @@
 module.exports = {
+    "mickeybs": {
+        "breakfast": {
+            "Fruit and Maple Oatmeal": 20,
+            "Fruit N' Yogurt Parfait": 10,
+            "Egg Mickey Muffin": 28,
+            "Egg White Delight Mickey Muffin": 38,
+            "Sausage Mickey Muffin": 20, 
+            "Sausage Mickey Muffin With Egg": 30,
+            "Bacon, Egg and Cheese Biscuit": 32,
+            "Sausage Biscuit": 10,
+            "Sausage Biscuit with Egg": 30,
+            "Steak, Egg and Cheese Bagel": 40
+        }
+    },
     "hammys": {
         "combos": {
             "Dave's Single": 2,
