@@ -21,7 +21,7 @@ exports.run = (Utils) => {
                     if(c.hammys_combos.length === 0) {
                         console.log("John > Cmon bro, why you gotta waste my time?")
                     } else {
-                        Utils.coins.removeCoins(0)
+                        Utils.coins.process(selections.combos, c.hammys_combos)
                         /*
                         console.log("John > Getting your stuff delivered bro.")
                         setTimeout(() => {
