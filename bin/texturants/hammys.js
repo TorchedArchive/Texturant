@@ -22,20 +22,32 @@ exports.run = (Utils) => {
                         console.log("John > Cmon bro, why you gotta waste my time?")
                     } else {
                         const price = Utils.coins.process(selections.combos, c.hammys_combos)
-                        
-                        if(price > Utils.coins.count()) {
-                            console.log("Texturant > Seems as though you don't have enough coins for this.\nGo work a shift to get more coins, and come back later!")
-                        } else {
-                            Utils.coins.removeCoins(price)
-                            console.log("John > Thanks for the purchase!")
-                        }
-                        /*
-                        console.log("John > Getting your stuff delivered bro.")
-                        setTimeout(() => {
-                            console.log("Texturant > Items have been delivered!")
-                        }, 2000) */
+                            
+                        inquirer.prompt({
+                            type: "list",
+                            name: "purchaseprompt",
+                            message: `Are you sure you want to buy this?`,
+                            choices: [
+                                "Yes",
+                                "No"
+                            ]
+                        }).then(a => {
+                            if(a.purchaseprompt === "Yes") {
+                                if(price > Utils.coins.count()) {
+                                    console.log("Texturant > Seems as though you don't have enough coins for this.\nGo work a shift to get more coins, and come back later!")
+                                } else {
+                                    Utils.coins.removeCoins(price)
+                                    console.log("John > Thanks for the purchase!")
+                                }
+                            } else {
+                                console.log("Texturant > You have decided not to buy. See you later!")
+                            }
+                        })
                     }
                 })
+            break;
+            case "Breakfast":
+                console.log("We are working on providing you with the Hammy's Breakfast menu in the future. Stay tuned.\n\t- SamuraiStacks, Texturant CEO")
             break;
         }
     })

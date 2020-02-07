@@ -1,5 +1,7 @@
 const fs = require("fs")
+const inquirer = require("inquirer")
 const Utils = require("./Utils.js")
+
 module.exports = {
     init: function() {
         if(!fs.existsSync(`${__dirname}/data.json`)) {
