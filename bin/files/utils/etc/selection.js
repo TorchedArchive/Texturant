@@ -15,25 +15,25 @@ module.exports = {
     },
     "hammys": {
         "combos": {
-            "Dave's Single": 2,
-            "Dave's Double": 2,
-            "Dave's Triple": 2,
-            "Baconator": 2,
-            "Son of Baconator": 2,
-            "Spicy Chicken Sandwich": 2,
-            "Homestyle Chicken Sandwich": 2,
-            "Aisago Ranch Chicken Club": 2,
-            "Grilled Chicken Sandwich": 2,
-            "10 PC. Nuggets": 2,
-            "Chicken Tenders": 2
+            "Dave's Single": 78,
+            "Dave's Double": 98,
+            "Dave's Triple": 108,
+            "Baconator": 108,
+            "Son of Baconator": 88,
+            "Spicy Chicken Sandwich": 89,
+            "Homestyle Chicken Sandwich": 89,
+            "Aisago Ranch Chicken Club": 98,
+            "Grilled Chicken Sandwich": 77,
+            "No PC. Chicken Nuggets": 75,
+            "Chicken Tenders": 88
         },
-        "breakfast": [
-            "Sausage Egg Cheese Biscuit",
-            "Bacon Egg Cheese Biscuit",
-            "Honey Butter Chicken Biscuit",
-            "Classic Sausage, Egg & Cheese Sandwich",
-            "Classic Bacon, Egg & Cheese Sandwich",
-            "Biggie Breakfast Sandwich"
-        ]
+        "breakfast": {
+            "Sausage Egg Cheese Biscuit": 0,
+            "Bacon Egg Cheese Biscuit": 0,
+            "Honey Butter Chicken Biscuit": 0,
+            "Classic Sausage, Egg & Cheese Sandwich": 0,
+            "Classic Bacon, Egg & Cheese Sandwich": 0,
+            "Biggie Breakfast Sandwich": 0
+        }
     }
 }
