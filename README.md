@@ -24,6 +24,7 @@ Here is an example of how you can use Texturant, made by me.
 + Texturant rewrite in Inquirer
 + Added usable currency
 + Add more items to buy
++ tbh i cant remember what else i did lmao
 
 
 # Todo
