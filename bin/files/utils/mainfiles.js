@@ -46,6 +46,7 @@ module.exports = {
                     })
                 break;
                 case "Check for Updates":
+                    console.log("Checking for updates...")
                     require("node-fetch")("https://api.npms.io/v2/search?q=texturant")
                     .then(res => res.json())
                     .then(r => {
