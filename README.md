@@ -14,12 +14,6 @@ That will install Texturant, and it will work no matter what directory you are i
 # Documentation
 PS: Extra docs will be coming soon.
 
-
-## Usage Example
-Here is an example of how you can use Texturant, made by me.
-
-![Usage](https://skullbite.is-for.me/i/6mtmta57.gif)
-
 # Changelog
 + Texturant rewrite in Inquirer
 + Added usable currency
