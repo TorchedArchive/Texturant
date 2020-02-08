@@ -49,6 +49,7 @@ module.exports.run = function(Utils) {
             break;
             case "Burgers":
                 console.log("We are currently working on the Burgers menu. Check back in the future.\n\t- sammy, Texturant CEO")
+                Utils.main.back()
             break;
         }
     })

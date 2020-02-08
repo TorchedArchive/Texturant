@@ -47,7 +47,8 @@ exports.run = (Utils) => {
                 })
             break;
             case "Breakfast":
-                console.log("We are working on providing you with the Hammy's Breakfast menu in the future. Stay tuned.\n\t- SamuraiStacks, Texturant CEO")
+                console.log("We are working on providing you with the Hammy's Breakfast menu in the future. Stay tuned.\n\t- sammy, Texturant CEO")
+                Utils.main.back()
             break;
         }
     })
